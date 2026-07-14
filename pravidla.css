@@ -1,0 +1,367 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  background-color: #111; /* pro jistotu */
+  padding: 0.3rem 0.8rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  margin-right: 2.5rem;  /* přidáme trochu prostoru od kraje */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.shrink {
+  padding: 0.6rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem; /* Větší mezery mezi odkazy */
+  margin-left: 9rem; /* Přiblížení k logu */
+}
+
+.nav-links li {
+  list-style: none;
+  padding: 5px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff8800;
+}
+
+.login-button {
+  margin-right: 4.5rem; /* posune blíž k odkazům */
+}
+
+.login-button a {
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, border 0.3s;
+}
+
+.login-button a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.logo-img {
+  height: 50px;
+  transition: height 0.3s ease;
+}
+
+.navbar.shrink {
+  padding: 0.6rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar.shrink .logo-img {
+  height: 42px;
+}
+
+nav {
+  position: relative; /* nebo fixed, pokud je nahoře pořád */
+  z-index: 1000; /* vysoké číslo zajistí, že bude navrchu */
+}
+
+.players-box {
+  background: rgba(255, 215, 0, 0.1); /* zlatavé průhledné pozadí */
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ff8800;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-right: 6rem;
+}
+
+.players-box:hover {
+  box-shadow: 0 10px 14px rgba(107, 66, 11, 0.2);
+  background: rgba(255, 145, 0, 0.15);
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 200px;
+  left: 40px;
+  width: 205px;
+  background-color: rgb(32, 32, 32);
+  border-radius: 12px;
+  padding: 1rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 1002;
+  user-select: none;
+}
+
+.sidebar h3 {
+  text-align: center;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.3rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.75rem;   /* Mezera mezi tlačítky */
+}
+
+.sidebar li a {
+  display: block;
+  width: 85%;
+  background: #3a3a3a;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.25s ease;
+}
+
+.sidebar li a:hover {
+  background: #2e2e2e;
+  transform: translateY(-2px);
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background-color: #ff8800;
+  color: #111;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .sidebar button {
+    flex: 1 1 calc(33% - 1rem);
+  }
+  .rules-content {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+.content{
+    margin-top: 10rem;
+}
+
+.page-section{
+    margin-top: 35px;
+    margin-left: 25rem;
+    margin-right: 18rem;
+    background-color: #3a3a3a25;
+    border: 0.75px solid rgba(255, 102, 0, 0.068);
+    border-radius: 10px;
+    box-shadow: 0 0 4px rgba(255, 123, 0, 0.219);
+    scroll-margin-top: 120px;
+}
+
+.content h1{
+    color: rgb(253, 134, 37);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.content h3{
+    color: rgb(253, 134, 37);
+    margin-left: 22px;
+}
+
+.content h4{
+    color: rgb(253, 134, 37);
+}
+
+.content p{
+  font-style: italic;
+  
+}
+
+.content strong{
+    color: rgb(253, 134, 37);
+}
+
+.content li{
+    margin-top: 10px;
+}
+
+.content ul{
+    margin-bottom: 50px;
+}
+
+#stars-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* klikání skrz canvas */
+}
+
+.footer {
+  position: relative;  /* nebo fixed, pokud chceš footer stále vidět */
+  z-index: 10;        /* vyšší index, aby byl nad canvas */
+  background-color: #111;
+  color: #ccc;
+  padding: 3rem 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+}
+
+.footer-column h3 {
+  color: orange;
+  margin-bottom: 1rem;
+}
+
+.footer-column p {
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-column a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: orange;
+}
+
+.social-icons a {
+  margin-right: 0.8rem;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(0.6);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .server-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Responzivní navigace */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .login-mobile {
+    display: block;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .login-mobile {
+    display: none;
+  }
+}

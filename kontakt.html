@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkyLifeRP - Kontakt</title>
+  <link rel="stylesheet" href="kontakt.css" />
+  <link rel="icon" type="image/x-icon" href="img/SkyLIfeLogoWhite.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/SkyLIfeLogoDarkYellow.png" alt="SkyLifeRP logo" class="logo-img" />
+      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+        <ul class="nav-links">
+          <li><a href="index.html">O serveru</a></li>
+          <li><a href="pravidla.html">Pravidla</a></li>
+          <li><a href="https://store.skyliferoleplay.cz">Obchod</a></li>
+          <li><a href="moznosti.html">Možnosti</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="#">Kontakt</a></li>
+  </ul>
+  <div class="players-box">
+    <span>Hráči online:</span> <strong id="player-count">Načítání...</strong>
+  </div>
+    </nav>
+  </header>
+<section class="contact-section">
+  <div class="contact-header">
+    <h2>Kontaktuj nás</h2>
+    <p>Všechny důležité odkazy a komunikační kanály na jednom místě. Pokud máš dotaz, problém nebo chceš jen sledovat náš obsah – jsi tu správně!</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-column">
+      <h3>Komunita & Podpora</h3>
+      <p><strong>Main Discord</strong></p>
+      <a href="https://discord.gg/skylifecz" target="_blank" class="btn">Klikni zde</a>
+
+      <p><strong>Support Discord:</strong></p>
+      <a href="https://discord.gg/D32pY2jMq7" target="_blank" class="btn">Klikni zde</a>
+
+      <p><strong>Nelegální Discord:</strong></p>
+      <a href="https://discord.gg/PNMUJyhbnb" target="_blank" class="btn">Klikni zde</a>
+    </div>
+
+    <div class="contact-column">
+      <h3>Sociální sítě & Obsah</h3>
+      <p><strong>TikTok:</strong></p>
+      <a href="https://www.tiktok.com/@__skylife__" target="_blank" class="btn">Klikni zde</a>
+
+      <p><strong>Tebex Obchod:</strong></p>
+      <a href="https://store.skyliferoleplay.cz" target="_blank" class="btn">Klikni zde</a>
+
+      <p><strong>Wiki:</strong></p>
+      <a href="https://skylife-rp-1.gitbook.io/skylife-rp-wiki" target="_blank" class="btn">Klikni zde</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>SkyLifeRP</h3>
+      <p>Nejlepší český FiveM roleplay server. Připoj se k nám a zažij jedinečný herní zážitek!</p>
+      <div class="social-icons">
+        <a href="https://discord.gg/skylifecz"><img src="img/discord.png" alt="Discord" /></a>
+        <a href="https://www.tiktok.com/@__skylife__"><img src="img/tiktok.png" alt="TikTok" /></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Rychlé odkazy</h3>
+      <ul>
+        <li><a href="index.html">O serveru</a></li>
+        <li><a href="pravidla.html">Pravidla</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Server info</h3>
+      <ul>
+        <li>🖥️ IP: connect.skyliferp.cz</li>
+        <li>👥 Kapacita: 300 hráčů</li>
+        <li>📅 Založeno: 2024</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2023 SkyLifeRP. Všechna práva vyhrazena. <br> tvorba a provoz webu: PPN
+  </div>
+</footer>
+
+<script>
+  async function fetchPlayerCount() {
+    try {
+      const response = await fetch("https://servers-frontend.fivem.net/api/servers/single/m8jek9");
+      const data = await response.json();
+
+      const count = data.Data.clients;
+      const countElements = document.querySelectorAll("#player-count");
+      countElements.forEach(el => el.textContent = count);
+    } catch (error) {
+      console.error("Nepodařilo se načíst počet hráčů:", error);
+      const countElements = document.querySelectorAll("#player-count");
+      countElements.forEach(el => el.textContent = "Chyba");
+    }
+  }
+
+  fetchPlayerCount();
+  setInterval(fetchPlayerCount, 60000);
+
+  console.log("Skript funguje!");
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("shrink");
+    } else {
+      navbar.classList.remove("shrink");
+    }
+  });
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+main.content {
+  padding-top: 80px; /* nebo více podle výšky menu */
+  margin-top: -10%;
+}
+
+.menu-toggle {
+  display: none;
+  background-color: #111; /* pro jistotu */
+  padding: 0.3rem 0.8rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  margin-right: 2.5rem;  /* přidáme trochu prostoru od kraje */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.shrink {
+  padding: 0.6rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem; /* Větší mezery mezi odkazy */
+  margin-left: 9rem; /* Přiblížení k logu */
+}
+
+.nav-links li {
+  list-style: none;
+  padding: 5px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff8800;
+}
+
+.login-button {
+  margin-right: 4.5rem; /* posune blíž k odkazům */
+}
+
+.login-button a {
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, border 0.3s;
+}
+
+.login-button a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.logo-img {
+  height: 50px;
+  transition: height 0.3s ease;
+}
+
+.navbar.shrink {
+  padding: 0.6rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar.shrink .logo-img {
+  height: 42px;
+}
+
+nav {
+  position: relative; /* nebo fixed, pokud je nahoře pořád */
+  z-index: 1000; /* vysoké číslo zajistí, že bude navrchu */
+}
+
+.players-box {
+  background: rgba(255, 215, 0, 0.1); /* zlatavé průhledné pozadí */
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ff8800;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-right: 6rem;
+}
+
+.players-box:hover {
+  box-shadow: 0 10px 14px rgba(107, 66, 11, 0.2);
+  background: rgba(255, 145, 0, 0.15);
+}
+
+.contact-section {
+  padding: 60px 30px;
+  background: linear-gradient(to right, #0f0f0fb0, #111111);
+  color: #f5f5f5;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 75px;
+  margin-bottom: 20px;
+}
+
+.contact-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #ffffffcc;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 100px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-column {
+  background-color: #2f2f2f;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.contact-column:hover {
+  transform: translateY(-5px);
+}
+
+.contact-column h3 {
+  color: #fd9903;
+  margin-bottom: 20px;
+}
+
+.contact-column p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.contact-column a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.contact-column a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #b36c01, #fd9903);
+  color: #222;
+  font-weight: 600;
+  padding: 12px 22px;
+  margin: 8px 0 20px 0;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgba(255, 193, 7, 0.4);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  font-size: 1rem;
+  text-align: center;
+  min-width: 220px;
+}
+
+.btn:hover,
+.btn:focus {
+  background: linear-gradient(135deg, #ffb300, #ffcd39);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.6);
+  color: #111;
+}
+
+.contact-column p {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #fd9903c0;
+}
+
+@media (max-width: 600px) {
+  .btn {
+    min-width: 100%;
+    padding: 14px 0;
+  }
+}
+
+
+.footer {
+  position: relative;  /* nebo fixed, pokud chceš footer stále vidět */
+  z-index: 10;        /* vyšší index, aby byl nad canvas */
+  background-color: #111;
+  color: #ccc;
+  padding: 3rem 2rem 1rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+}
+
+.footer-column h3 {
+  color: orange;
+  margin-bottom: 1rem;
+}
+
+.footer-column p {
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-column a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: orange;
+}
+
+.social-icons a {
+  margin-right: 0.8rem;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(0.6);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .server-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Responzivní navigace */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .login-mobile {
+    display: block;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .login-mobile {
+    display: none;
+  }
+}

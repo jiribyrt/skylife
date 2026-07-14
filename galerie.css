@@ -1,0 +1,448 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+main.content {
+  padding-top: 80px; /* prostor pro fixed menu */
+  margin-top: 0; /* odstraněno negativní odsazení */
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.menu-toggle {
+  display: none;
+  background-color: #111;
+  padding: 0.3rem 0.8rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+  margin-right: 2.5rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.navbar.shrink {
+  padding: 0.6rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  margin-left: 9rem; /* menší odsazení, aby nebylo moc vpravo */
+}
+
+.nav-links li {
+  list-style: none;
+  padding: 5px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff8800;
+}
+
+.logo-img {
+  height: 50px;
+  transition: height 0.3s ease;
+}
+
+.navbar.shrink .logo-img {
+  height: 42px;
+}
+
+nav {
+  position: relative;
+  z-index: 1000;
+}
+
+.players-box {
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ff8800;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  margin-right: 2rem; /* zmenšeno odsazení */
+}
+
+.players-box:hover {
+  box-shadow: 0 10px 14px rgba(107, 66, 11, 0.2);
+  background: rgba(255, 145, 0, 0.15);
+}
+
+.gallery-section {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: #0d0d0d; /* nebo co chceš */
+}
+
+.gallery-section h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 9rem;
+  margin-bottom: 20px;
+}
+
+.gallery-section h4 {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 1rem;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #4b4b4b;
+  color: #ffffff;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: #5c5c5c;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn.active {
+  background-color: #f38d3a;
+  color: #ffffff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+.gallery-buttons .btn {
+  background-color: #222;
+  border: 2px solid #f4c542;
+  color: #f4c542;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.gallery-buttons .btn:hover,
+.gallery-buttons .btn.active {
+  background-color: #f4c542;
+  color: #222;
+}
+
+.video-gallery {
+  padding-bottom: 40px;
+  text-align: center;
+  color: white;
+}
+
+.video-gallery h2 {
+  margin-top: 0px;
+  font-size: 1.75rem;
+  margin-bottom: 0.5em;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-item {
+  background: #1c1c1c;
+  border: 2px solid #3c3c3c;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px #000;
+}
+
+.video-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.video-item p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.gallery-images {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: nowrap;
+  padding: 0 20px; /* můžeš přidat */
+  box-sizing: border-box;
+}
+
+.gallery-item {
+  flex: 0 0 32%;
+  background-color: #161616d0;
+  border-radius: 10px;
+  padding: 15px;
+  color: #eee;
+  box-shadow: 0 0 10px rgba(243, 145, 54, 0.356);
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+.gallery-item h3 {
+  display: none;
+}
+
+.gallery-item p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.gallery-theme {
+  text-align: center;
+  font-style: italic;
+  margin: 20px auto;
+  color: #ddd;
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+.other-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1400px;
+  margin: 30px auto 0;
+  margin-bottom: 3rem;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.other-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* širší poměr */
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* decentní šedý rámeček */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* jemný stín */
+  background-color: #1a1a1a; /* slabý kontrastní podklad */
+  transition: transform 0.3s ease;
+}
+
+.other-photo img:hover {
+  transform: scale(1.02); /* mírné přiblížení při přejetí */
+}
+
+@media (max-width: 600px) {
+  .btn {
+    min-width: 100%;
+    padding: 14px 0;
+  }
+
+  .gallery-images {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .gallery-item {
+    flex: 0 0 80%;
+    margin-right: 20px;
+  }
+}
+
+.footer {
+  position: relative;
+  z-index: 10;
+  background-color: #111;
+  color: #ccc;
+  padding: 3rem 2rem 1rem;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  color: orange;
+  margin-bottom: 1rem;
+}
+
+.footer-column p {
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-column a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: orange;
+}
+
+.social-icons a {
+  margin-right: 0.8rem;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(0.6);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .server-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Responzivní navigace */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .login-button {
+    display: none;
+  }
+
+  .login-mobile {
+    display: block;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .login-mobile {
+    display: none;
+  }
+}

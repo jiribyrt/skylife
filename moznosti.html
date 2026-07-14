@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkyLifeRP - Možnosti</title>
+  <link rel="stylesheet" href="moznosti.css" />
+  <link rel="icon" type="image/x-icon" href="img/SkyLIfeLogoWhite.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="img/SkyLIfeLogoDarkYellow.png" alt="SkyLifeRP logo" class="logo-img" />
+      </div>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+        <ul class="nav-links">
+          <li><a href="index.html">O serveru</a></li>
+          <li><a href="pravidla.html">Pravidla</a></li>
+          <li><a href="https://store.skyliferoleplay.cz">Obchod</a></li>
+          <li><a href="moznosti.html">Možnosti</a></li>
+          <li><a href="galerie.html">Galerie</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+  <div class="players-box">
+    <span>Hráči online:</span> <strong id="player-count">Načítání...</strong>
+  </div>
+    </nav>
+  </header>
+
+<section class="section-options">
+  <div class="section-wrapper">
+    <h1 class="nadpis">Možnosti</h1>
+    <p class="section-subtitle">
+      Na serveru SkyLifeRP na vás čeká široká škála aktivit které si zde můžete pročíst.
+    </p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="toggle-buttons">
+    <button class="btn legal active" id="btn-legal">Legální možnosti</button>
+    <button class="btn neutral" id="btn-neutral">Neutrální možnosti</button>
+    <button class="btn illegal" id="btn-illegal">Nelegální možnosti</button>
+  </div>
+</div>
+
+
+<!-- Kontejner pro legální karty -->
+<div id="legal-cards-container">
+  <h2 class="section-title">Legální možnosti</h2>
+  <p class="neutral-intro">
+Na našem serveru <strong>SkyLifeRP</strong> můžeš pracovat jako <strong>policista, hasič, doktor</strong> nebo úředník a ovlivňovat chod města.
+Vládní frakce ti nabídnou akci, zodpovědnost i respekt.
+Ve volném čase si můžeš odpočinout u <strong>rybaření, lovu zvěře</strong> nebo jiných aktivit v přírodě.
+</p>
+  <div class="job-cards">
+    <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/lspd.png" alt="LSPD">
+      </div>
+      <div class="card-content">
+        <h3>Policista</h3>
+        <span class="difficulty medium">Střední obtížnost</span>
+        <p class="salary">Výdělek: $3,000 – $5,000/hodinu</p>
+        <p>Udržujte pořádek ve městě, zatýkejte zločince a vyšetřujte trestné činy. Policisté jsou páteří bezpečnosti v Los Santos.</p>
+        <a href="#" class="info-btn" onclick="openModalLSPD()">Více informací</a>
+      </div>
+    </div>
+
+          <div id="info-modal-lspd" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Policista</h2>
+      <div class="modal-row">
+      <div class="modal-row-text">
+      <ul>
+      <p>Policie na SkyLife není jen o zatýkání – je to páteř zákona, klíčová součást města, kde každé rozhodnutí může změnit průběh dne. Jako policista neseš odpovědnost, ale i sílu chránit.</p> 
+      <h4>Co práce u LSPD zahrnuje:</h4>
+      <li>Hlídky po městě, reakce na přestupky, výjezdy k ozbrojeným incidentům</li>
+      <li>Práce s moderním vybavením – tasery, radary, databáze, apod.</li>
+      <li>RP výslechy, evidence trestných činů, přestupkový i trestní řád</li>
+      <li>Služby jako SWAT, dopravka, hlídky ve čtvrti nebo air unit</li>
+      <li>Úzká spolupráce se záchrankou a hasiči při rozsáhlých akcích</li>
+      <li>Postup po hodnostech, výcviky, kariérní růst</li>
+      <p><strong>Pamatuj</strong>: Nosíš odznak, ne pro prestiž – ale proto, že jsi ochoten dělat to, co jiní nedokážou. Právo, pořádek a důstojné RP začíná u tebe.</p>
+      </ul>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/ems.png" alt="Doktorka">
+      </div>
+      <div class="card-content">
+        <h3>Záchranář</h3>
+        <span class="difficulty medium">Střední obtížnost</span>
+        <p class="salary">Výdělek: $2,500 – $4,500/hodinu</p>
+        <p>Zachraňujte životy, poskytujte první pomoc a transportujte zraněné do nemocnice. Záchranáři jsou nepostradatelní pro přežití města.</p>
+        <a href="#" class="info-btn" onclick="openModalEMS()">Více informací</a>
+      </div>
+    </div>
+
+        <div id="info-modal-ems" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Záchranář</h2>
+      <div class="modal-row">
+      <div class="modal-row-text">
+      <ul>
+      <p>V roli záchranáře na SkyLife nejde jen o první pomoc. Jde o životy, o rychlost, o rozhodnutí, která děláš ve vteřinách. Být záchranářem znamená být první na místě… a poslední nadějí.</p> 
+      <h4>Co tě čeká ve zdravotní frakci:</h4>
+      <li>Výjezdy k nehodám, střelným zraněním i běžným kolapsům</li>
+      <li>Diagnostika a ošetření zranění pomocí přehledného systému</li>
+      <li>Transport pacientů do nemocnice, komunikace s doktory i policií</li>
+      <li>Možnost specializace – sanitář, záchranář, lékař, chirurg nebo veterinář</li>
+      <li>Přátelský kolektiv a respekt ve městě – jsi ti, kdo zachraňuje</li>
+      </ul>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="job-card">
+      <div class="image-wrapper purple">
+        <img src="img/lsfd.png" alt="Hasiči">
+      </div>
+      <div class="card-content">
+        <h3>Hasič</h3>
+        <span class="difficulty medium">Střední obtížnost</span>
+        <p class="salary">Výdělek: $5,000 – $8,500/hodinu</p>
+        <p>Bojujte s požáry, zachraňujte oběti z nebezpečných situací a pomáhejte při haváriích. Hasiči chrání město před živly a jsou hrdiny v první linii.</p>
+        <a href="#" class="info-btn" onclick="openModalLSFD()">Více informací</a>
+      </div>
+    </div>
+
+    <div id="info-modal-lsfd" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Hasič</h2>
+      <div class="modal-row">
+      <div class="modal-row-text">
+      <ul>
+      <p>Na SkyLifeRP se můžeš stát součástí elitního týmu záchranářů v roli profesionálního hasiče. Tahle práce není jen o hašení požárů – je o odvaze, rychlém rozhodování a záchraně životů uprostřed chaosu.</p> 
+      <h4>Co hasičská frakce nabízí:</h4>
+      <li>Zásahy při požárech, autonehodách, výbuších a dalších krizových situacích</li>
+      <li>Spolupráce s policií a záchrankou při velkých incidentech</li>
+      <li>Využití specializované techniky – cisterny, hydraulické nůžky, výsuvné žebříky</li>
+      <li>Ošetřování popálenin, evakuace z budov, zajištění bezpečí na místě</li>
+      <li>Skvělý RP potenciál pro týmovou spolupráci, napětí i hrdinské momenty</li>
+      </ul>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <h2 class="section-title">Ostatní možnosti</h2>
+  <div class="job-cards">
+
+<div class="job-card highlight">
+  <div class="image-wrapper">
+    <img src="img/taxi.png" alt="Taxi">
+  </div>
+  <div class="card-content">
+    <h3>Taxikář</h3>
+    <span class="difficulty low">Lehká obtížnost</span>
+    <p class="salary">Výdělek: $3,500 – $4,000/hodinu</p>
+    <p><strong>Nejvyužívanější brigáda na SkyLife!</strong><br>
+    Dopravujte obyvatele města, vydělávejte na jízdném a poznejte každou uličku Los Santos.</p>
+    <a href="#" class="info-btn" onclick="openModalTaxi()">Více informací</a>
+  </div>
+</div>
+
+<div id="info-modal-taxi" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Taxikář</h2>
+      <div class="modal-row">
+        <div class="modal-row-text">
+          <ul>
+            <p>Taxi služba na SkyLife není jen o převážení pasažérů – je to spojka mezi lidmi, tepna města, která nikdy nespí. 
+            Jako taxikář znáš každou ulici, jsi průvodce i pomocník, když ostatní potřebují rychle dorazit na místo.</p> 
+            <p><strong>Proč právě taxi?</strong><br>
+            Protože jde o <span style="color:#facc15; font-weight:bold;">nejpopulárnější brigádu</span> na serveru – denně ji využívají stovky hráčů, 
+            takže o zákazníky nebude nouze!</p>
+            <h4>Co práce u Taxi zahrnuje:</h4>
+            <li>Vyřizování zakázek přes dispečink i zastavování pro náhodné zákazníky</li>
+            <li>Perfektní znalost ulic, zkratek a nejrychlejších tras</li>
+            <li>Interakce s hráči – od běžných jízd po nečekané situace</li>
+            <li>Flexibilní pracovní doba, volnost v hraní a stabilní příjem</li>
+            <li>Postup v hierarchii taxi společnosti, od řidiče až po dispečera</li>
+            <p><strong>Pamatuj</strong>: Nejsi jen řidič – jsi součástí života Los Santos. Každá tvoje jízda může znamenat začátek příběhu, na který se nezapomíná.</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/rybar.png" alt="Rybaření">
+      </div>
+      <div class="card-content">
+        <h3>Rybaření</h3>
+        <span class="difficulty low">Nízká obtížnost</span>
+        <p class="salary">Výdělek: $800 – $1.600/hodinu</p>
+        <p>Chytejte různé druhy ryb, prodávejte úlovky a objevujte klidné kouty přírody. Rybaření je ideální volbou pro relax a výdělek mimo ruch města.</p>
+        <a href="#" class="info-btn" onclick="openModalRyb()">Více informací</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="info-modal-ryb" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Rybaření</h2>
+
+      <div class="modal-row">
+        <div class="modal-row-text">
+          <p>🐟 Rybaření je skvělý způsob, jak si vydělat peníze a zároveň se pobavit! 💰✨ Můžeš chytat sám nebo s kamarádem, takže o zábavu nebude nouze! 🛶👥</p>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/ryb1.png" alt="Rybaření Image 1">
+        </div>
+      </div>
+      <div class="modal-row">
+        <div class="modal-row-text">
+          <p>🚤 Nemáš loď? Žádný problém! Můžeš si ji půjčit v místní půjčovně a vyrazit na lov větších úlovků! 🐠🎣</p>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/ryb2.png" alt="Rybaření Image 2">
+        </div>
+      </div>
+      <div class="modal-row">
+        <div class="modal-row-text">
+          <p>📈 S rybařením získáváš XP, což ti odemkne lepší pruty a návnady! 🏹🐛 Ty ti pomůžou chytat vzácnější a dražší ryby, takže si můžeš pořádně namastit kapsu! 💰🐡</p>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/ryb3.png" alt="Rybaření Image 3">
+        </div>
+      </div>
+      <div class="modal-row">
+        <div class="modal-row-text">
+          <p>🎯 Denní mise – Každý den můžeš plnit speciální úkoly, které ti dají XP navíc a pomůžou ti rychleji postupovat! 📜🔥</p>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/ryb4.png" alt="Rybaření Image 4">
+        </div>
+      </div>
+
+      <div class="modal-row">
+        <div class="modal-row-text">
+          <p>💎 Speciální nabídky – Občas se objeví exkluzivní nabídky, díky kterým si můžeš přilepšit a získat lepší vybavení! 🛍️🎁</p>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/ryb5.png" alt="Rybaření Image 5">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Neutrální karty - skryté ve výchozím stavu -->
+<div id="neutral-cards-container" style="display:none;">
+<h2 class="section-title">Neutrální práce</h2>
+
+<p class="neutral-intro">
+  Na našem serveru <strong>SkyLifeRP</strong> najdeš bohaté možnosti roleplaye i mimo kriminální a státní scénu. 
+  Neutrální frakce zahrnují podniky, kluby a služby, které tvoří živé a realistické město. 
+  Ať už tě baví podnikání, komunikace nebo práce rukama – tady si vybereš.
+</p>
+
+  <div class="job-cards">
+    <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/mechanik.png" alt="Mechanik">
+      </div>
+      <div class="card-content">
+        <h3>Mechanik</h3>
+        <span class="difficulty low">Nízká obtížnost</span>
+        <p class="salary">Výdělek: $2,000 – $3,500/hodinu</p>
+        <p>Miluješ auta? Opravuj vozidla, montuj tuning, lakuj karoserie a provozuj jednu z klíčových služeb města. Dílny jsou ideální pro hráče, kteří chtějí propojit RP s mechanikou vozidel.</p>
+        <a href="#" class="info-btn" onclick="openModalMechanic()">Více informací</a>
+      </div>
+    </div>
+
+    <div id="info-modal-mechanic" class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+          <div class="modal-scroll">
+
+          <h2>Mechanik</h2>
+            <div class="modal-row">
+              <div class="modal-row-text">
+                <ul>
+              <p>Na SkyLife najdeš hned několik funkčních dílen, kde si můžeš opravit, upravit nebo vylepšit své vozidlo. Každá z nich má vlastní styl a prostředí – vyber si tu, která ti sedí nejvíc!</p>
+              <h3>Crafting Table v dílnách</h3>
+              <li>Každá dílna je vybavena Crafting Tablem, který umožňuje vyrábět základní předměty pro servis a péči o vozidla</li>
+              <h3>Co zde můžeš vyrábět:</h3>
+              <li><strong>Repair Kity</strong> – pro rychlou opravu vozidel v terénu</li>
+              <li><strong>Správný postup vaření</strong> – jinak meth nebude kvalitní nebo selže</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/gastro.png" alt="Bar">
+      </div>
+      <div class="card-content">
+        <h3>Gastronomický personál</h3>
+        <span class="difficulty low">Nízká obtížnost</span>
+        <p class="salary">Výdělek: $2,400 – $3,000/hodinu</p>
+        <p>Otevři si vlastní podnik, připravuj menu, obsluhuj zákazníky a vytvoř si stálou klientelu. Možností je mnoho – od fastfoodu až po luxusní restauraci.</p>
+        <a href="#" class="info-btn" onclick="openModalGastro()">Více informací</a>
+      </div>
+    </div>
+
+
+    <div id="info-modal-gastro" class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+          <div class="modal-scroll">
+
+          <h2>Restaurace</h2>
+            <div class="modal-row">
+              <div class="modal-row-text">
+                <ul>
+              <p>Na SkyLife používáme propracované a interaktivní restaurační scripty od DRC. Tyto podniky přinášejí nejen plnohodnotné doplnění hladu a žízně, ale také jedinečný RP zážitek, kterým se obchody nevyrovnají.</p>
+              <h3>Co restaurace nabízejí?</h3>
+              <li>Každá restaurace má vlastní jídelníček – jiné pokrmy, jiné efekty</li>
+              <li>Jídlo i pití se připravuje ručně hráči – vše je součástí RP procesu</li>
+              <li>Možnost objednat, obsloužit, připravit i rozvážet ( Services v Telefonu )</li>
+              <li>Speciální efekty (např. plné doplnění hladu/žízně, dočasné buffy)</li>
+              <li>Interiér, obsluha a sociální kontakt – ideální pro eventy i chill</li>
+              <p><strong>Pamatuj</strong>: Jídlo z restaurace ti nejen naplní břicho, ale může být i součástí skvělého RP momentu s komunitou.</p>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/bary.png" alt="Bar">
+      </div>
+      <div class="card-content">
+        <h3>Barový a klubový personál</h3>
+        <span class="difficulty low">Nízká obtížnost</span>
+        <p class="salary">Výdělek: $2,800 – $3,500/hodinu</p>
+        <p>Staň se majitelem populárního nočního klubu, DJem nebo barmanem. Pořádej akce, přilákej návštěvníky a starej se o provoz podniku.</p>
+        <a href="#" class="info-btn" onclick="openModalBary()">Více informací</a>
+      </div>
+    </div>
+
+        <div id="info-modal-bary" class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+          <div class="modal-scroll">
+
+          <h2>Barový a klubový personál</h2>
+            <div class="modal-row">
+              <div class="modal-row-text">
+                <ul>
+              <p>SkyLife v noci nikdy nespí – a právě ty můžeš být tím, kdo udává rytmus večera, míchá nejlepší drinky nebo drží pořádek na vstupu. Kluby a bary jsou srdcem nočního RP – místo zábavy, konfliktů i nezapomenutelných momentů.</p>
+              <h3>Jaké pozice můžeš zastávat:</h3>
+              <li><strong>Barman</strong> – připravuješ nápoje, obsluhuješ hosty, komunikuješ s DJem a vytváříš atmosféru</li>
+              <li><strong>DJ</strong> – ovládáš hudbu, nastavuješ sety, ovlivňuješ tempo večera, můžeš hostovat akce</li>
+              <li><strong>Security</strong> – kontroluješ vstup, řešíš konflikty, spolupracuješ s policií, držíš prostor v bezpečí</li>
+              <h3>Co barový svět nabízí:</h3>
+              <li>Stylové interiéry a hráčem vlastněné podniky</li>
+              <li>Možnost plánovat večírky, akce nebo VIP párty</li>
+              <li>Spolupráce s event týmem i frakcemi (policie, media…)</li>
+              <li>Skvělý prostor pro lehké i intenzivní RP (flirty, konflikty, drama)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+          <h2 class="section-title">Proč si zvolit neutrální frakci?</h2>
+      <section class="neutral-intro2">
+    <ul>
+      <li>Flexibilní RP – Tvoje role není vázaná na zákon nebo zločin. Můžeš si vytvářet vlastní scénáře a navazovat různorodé vztahy s ostatními hráči.</li>
+      <li>Volnost a kreativita – Máš prostor přizpůsobit si frakci podle svých představ. Nejsi ničím svázaný – rozjeď podnik podle svého stylu, pravidel a nápadů.</li>
+      <li>Možnost růstu – Dobře vedená frakce může získat prestiž a vliv v rámci komunity.</li>
+    </ul>
+    <p>Náš server dává prostor kreativním hráčům, kteří chtějí budovat, tvořit a rozvíjet herní svět. Nezáleží na tom, zda máš chuť být úspěšný podnikatel, vášnivý kuchař, šikovný mechanik nebo mistr výroby – tady najdeš místo právě pro sebe.</p>
+  </section>
+</div>
+
+<!-- Nelegální karty - skryté ve výchozím stavu -->
+<div id="illegal-cards-container" style="display:none;">
+  <h2 class="section-title">Nelegální práce</h2>
+    <p class="neutral-intro">
+Na <strong>SkyLifeRP</strong> můžeš vstoupit do podsvětí jako člen <strong>gangu, mafie nebo kartelu</strong> a budovat respekt nelegální cestou.
+Zapoj se do <strong>výpalného, pašování</strong> nebo si vybuduj vlastní síť – třeba <strong>pěstuj marihuanu, vař perník</strong> nebo obchoduj se zbraněmi.
+Tahle cesta je riskantní, ale výnosná – a otevřená jen těm, kteří si umí krýt záda.
+
+
+<h2 class="section-title">Ostatní možnosti</h2>
+  <div class="job-cards">
+    <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/tráva.png" alt="Marihuana">
+      </div>
+      <div class="card-content">
+        <h3>Pěstování marihuany</h3>
+        <span class="difficulty medium">Střední obtížnost</span>
+        <p class="salary">Výdělek: $1,000 – $3,000/hodinu</p>
+        <p>Sázejte, sklízejte a zpracovávejte rostliny na výnosný produkt. Pěstování marihuany vyžaduje opatrnost, ale může přinést vysoký zisk pro odvážné.</p>
+        <a href="#" class="info-btn" onclick="openModalWeed()">Více informací</a>
+      </div>
+    </div>
+
+  <div id="info-modal-weed" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Pěstování marihuany</h2>
+      <div class="modal-row">
+      <div class="modal-row-text">
+      <ul>
+      <h4>Možnosti pěstování:</h4> 
+      <li>Lze pěstovat v květináči kdekoliv (outdoor)</li>
+      <li>Nebo uvnitř domu, pokud máš lampičku jako náhradu slunce</li>
+      <li>Pěstování vyžaduje pravidelnou péči: zalévání, hnojení, kontrola stavu</li>
+      <li>Po dozrání lze sklidit a zabalit přímo v inventáři pomocí sáčku</li>
+      <h4>Co s ní dál?</h4> 
+      <li>Můžeš ji prodat u NPC</li>
+      <li>Nebo si z ní ubalit joint a užít si účinek</li>
+      </ul>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/weed.png" alt="Rybaření Image 1">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+        <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/meth1.png" alt="Vaření Methu">
+      </div>
+      <div class="card-content">
+        <h3>Vaření pervitinu</h3>
+        <span class="difficulty medium">Střední obtížnost</span>
+        <p class="salary">Výdělek: $1,000 – $3,000/hodinu</p>
+        <p>Obchody zde fungují klasickým způsobem, jak už dobře znáte.</p>
+        <a href="#" class="info-btn" onclick="openModalMeth()">Více informací</a>
+      </div>
+    </div>
+
+  <div id="info-modal-meth" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Vaření pervitinu</h2>
+      <div class="modal-row">
+      <div class="modal-row-text">
+      <ul>
+        <p>Výroba methu probíhá v karavanu <strong>Journey II</strong>, který si musíš koupit</p>
+        <h4>Potřebuješ:</h4>
+        <li>Speciální chemikálie zakoupené u dealera poblíž Human Labs</li>
+        <li>Správný postup vaření – jinak meth nebude kvalitní nebo selže</li>
+      </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+      <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/obchod.png" alt="Obchod">
+      </div>
+      <div class="card-content">
+        <h3>Vykrádání obchodu</h3>
+        <span class="difficulty medium">Střední obtížnost</span>
+        <p class="salary">Výdělek: $1,000 – $3,000/hodinu</p>
+        <p>Obchody zde fungují klasickým způsobem, jak už dobře znáte.</p>
+        <a href="#" class="info-btn" onclick="openModalStore()">Více informací</a>
+      </div>
+    </div>
+
+  <div id="info-modal-store" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Vykrádání obchodu</h2>
+      <div class="modal-row">
+      <div class="modal-row-text">
+      <ul>
+        <h4>Co potřebujete k loupeži?</h4>
+        <li>Zbraň – bez ní to nepůjde.</li>
+        <li>Rukojmí – pro lepší vyjednávací pozici.</li>
+      </ul>
+        <p>⚠️ Než se do něčeho pustíte, přečtěte si pravidla!</p>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/obchod2.png" alt="Vykrádání obchodu">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="job-card">
+      <div class="image-wrapper">
+        <img src="img/heist.png" alt="Heist">
+      </div>
+      <div class="card-content">
+        <h3>Heist Tablet</h3>
+        <span class="difficulty medium">Střední obtížnost</span>
+        <p class="salary">Výdělek: $1,000 – $3,000/hodinu</p>
+        <p>Heisty probíhají prostřednictvím Contract tabletu, který umožňuje plánování a provedení různých loupeží.</p>
+        <a href="#" class="info-btn" onclick="openModalHeist()">Více informací</a>
+      </div>
+    </div>
+
+  <div id="info-modal-heist" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-content">
+    <button class="modal-close-btn" onclick="closeModalByButton(event)">×</button>
+    <div class="modal-scroll">
+
+      <h2>Heist Tablet</h2>
+      <div class="modal-row">
+        <div class="modal-row-text">
+                <ul>
+      <h4>Kde získat tablet?</h4> 
+      <li>Contract tablet lze koupit v elektro shopu.</li>
+      <h4>Jak funguje tablet?</h4> 
+      <li>Po otevření tabletu vidíte svůj profil, který můžete vylepšovat (expit) a postupně si odemykat lepší možnosti. Můžete se také spojit s kamarády díky systému skupin, což vám umožní efektivnější provádění heistů.</li>
+      </ul>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/heist1.png" alt="Heist 1">
+        </div>
+      </div>
+      <div class="modal-row">
+        <div class="modal-row-text">
+          <ul><h4>Dostupné heisty</h4></ul>
+          <p>Art Asylum 🔹 Bobcat Security 🔹 Car Boosting 🔹 Cargo Containers 🔹 Casino 🔹 Cash Exchange 🔹 Fleeca Bank 🔹 Laundromat 🔹 Maze Bank 🔹 Pacific Bank 🔹 Paleto Bank</p>
+        </div>
+        <div class="modal-row-image">
+          <img src="img/heist2.png" alt="Heist 2">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>SkyLifeRP</h3>
+      <p>Nejlepší český FiveM roleplay server. Připoj se k nám a zažij jedinečný herní zážitek!</p>
+      <div class="social-icons">
+        <a href="https://discord.gg/skylifecz"><img src="img/discord.png" alt="Discord" /></a>
+        <a href="https://www.tiktok.com/@__skylife__"><img src="img/tiktok.png" alt="TikTok" /></a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Rychlé odkazy</h3>
+      <ul>
+        <li><a href="index.html">O serveru</a></li>
+        <li><a href="pravidla.html">Pravidla</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Server info</h3>
+      <ul>
+        <li>🖥️ IP: connect play.skyliferoleplay.cz</li>
+        <li>👥 Kapacita: 300 hráčů</li>
+        <li>📅 Založeno: 2024</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2023 SkyLifeRP. Všechna práva vyhrazena. <br> tvorba a provoz webu: PPN
+  </div>
+</footer>
+<script src="script1.js"></script>
+</body>
+<script>
+  async function fetchPlayerCount() {
+    try {
+      const response = await fetch("https://servers-frontend.fivem.net/api/servers/single/m8jek9");
+      const data = await response.json();
+
+      const count = data.Data.clients;
+      const countElements = document.querySelectorAll("#player-count");
+      countElements.forEach(el => el.textContent = count);
+    } catch (error) {
+      console.error("Nepodařilo se načíst počet hráčů:", error);
+      const countElements = document.querySelectorAll("#player-count");
+      countElements.forEach(el => el.textContent = "Chyba");
+    }
+  }
+
+  fetchPlayerCount();
+  setInterval(fetchPlayerCount, 60000);
+
+  async function loadPlayerCount() {
+    try {
+      // IP A PORT SERVERU
+      const response = await fetch("http://123.45.67.89:30120/players.json");
+      const data = await response.json();
+      document.getElementById("playerCount").textContent = data.length;
+    } catch (error) {
+      document.getElementById("playerCount").textContent = "Nedostupné";
+      console.error("Chyba při načítání hráčů:", error);
+    }
+  }
+
+  loadPlayerCount();
+  setInterval(loadPlayerCount, 30000); // obnov každých 30 sekund
+  function openModal() {
+    document.getElementById("info-modal").style.display = "flex";
+  }
+
+  function closeModal(e) {
+    if (e.target.classList.contains("modal-overlay")) {
+      document.getElementById("info-modal").style.display = "none";
+    }
+  }
+
+  function openModalLSPD() {
+  document.getElementById('info-modal-lspd').style.display = 'flex';
+}
+
+  function openModalEMS() {
+  document.getElementById('info-modal-ems').style.display = 'flex';
+}
+
+  function openModalLSFD() {
+  document.getElementById('info-modal-lsfd').style.display = 'flex';
+}
+
+  function openModalTaxi() {
+  document.getElementById('info-modal-taxi').style.display = 'flex';
+}
+
+  function openModalRyb() {
+  document.getElementById('info-modal-ryb').style.display = 'flex';
+}
+
+  function openModalMechanic() {
+  document.getElementById('info-modal-mechanic').style.display = 'flex';
+}
+
+  function openModalGastro() {
+  document.getElementById('info-modal-gastro').style.display = 'flex';
+}
+
+  function openModalBary() {
+  document.getElementById('info-modal-bary').style.display = 'flex';
+}
+
+  function openModalHeist() {
+  document.getElementById('info-modal-heist').style.display = 'flex';
+}
+
+  function openModalWeed() {
+  document.getElementById('info-modal-weed').style.display = 'flex';
+}
+
+  function openModalMeth() {
+  document.getElementById('info-modal-meth').style.display = 'flex';
+}
+
+  function openModalStore() {
+  document.getElementById('info-modal-store').style.display = 'flex';
+}
+
+function closeModal(e) {
+  if (e.target.classList.contains("modal-overlay")) {
+    e.target.style.display = "none";
+  }
+}
+
+function closeModalByButton(event) {
+  event.stopPropagation();
+  event.target.closest('.modal-overlay').style.display = 'none';
+}
+
+</script>
+</html>
